@@ -18,5 +18,4 @@ class AccountDaoImpl : AccountDao {
         DataProvider.accounts.firstOrNull {
             it.client.id == client.id && it.isDefault
         }
-
 }
