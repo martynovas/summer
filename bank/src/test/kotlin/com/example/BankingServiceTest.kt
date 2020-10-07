@@ -4,6 +4,7 @@ import com.example.context.support.GenericApplicationContext
 import com.example.dal.provider.DataProvider
 import com.example.model.Money
 import com.example.service.AccountService
+import com.example.service.BankConfig
 import com.example.service.DboService
 import org.junit.jupiter.api.Test
 import kotlin.test.assertEquals
@@ -15,7 +16,7 @@ class BankingServiceTest {
         val amount = Money(1000.toBigDecimal(), 643)
 
 
-        val ctx = GenericApplicationContext()
+        val ctx = GenericApplicationContext(BankConfig())
         val dboService = ctx.getBean(DboService::class)
         val accountService = ctx.getBean(AccountService::class)
 

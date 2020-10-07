@@ -5,6 +5,7 @@ import com.example.beans.factory.annotation.Component
 import com.example.model.Account
 import com.example.model.Money
 import com.example.service.BankService
+import java.lang.Exception
 
 @Component
 class BankServiceImpl @Autowired constructor(
@@ -17,6 +18,7 @@ class BankServiceImpl @Autowired constructor(
     }
 
     private fun validateTransfer(fromAccount: Account, amount: Money){
-        TODO()
+        if (fromAccount.amount.value<amount.value)
+            throw Exception("Not enough money")
     }
 }

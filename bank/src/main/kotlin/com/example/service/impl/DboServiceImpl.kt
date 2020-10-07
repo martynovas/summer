@@ -20,4 +20,8 @@ class DboServiceImpl @Autowired constructor(
         bankService.transferMoney(fromAccount, toAccount, amount)
     }
 
+    init {
+        println("Created new DboServiceImpl")
+    }
+
 }
