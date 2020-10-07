@@ -1,6 +1,7 @@
 package com.example.service.impl
 
 import com.example.beans.factory.annotation.Autowired
+import com.example.beans.factory.annotation.Benchmark
 import com.example.beans.factory.annotation.Component
 import com.example.model.Client
 import com.example.model.Money
@@ -10,9 +11,10 @@ import com.example.service.DboService
 
 @Component
 class DboServiceImpl @Autowired constructor(
-   val bankService: BankService,
-   val accountService: AccountService
+   private val bankService: BankService,
+   private val accountService: AccountService
 ): DboService {
+    @Benchmark
     override fun transferMoney(fromClient: Client, toClient: Client, amount: Money) {
         val fromAccount = accountService.getDefaultAccount(fromClient)
         val toAccount = accountService.getDefaultAccount(toClient)

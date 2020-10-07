@@ -15,8 +15,5 @@ class AccountServiceImpl @Autowired constructor(
         accountDao.findAccounts(client)
 
     override fun getDefaultAccount(client: Client): Account =
-        accountDao.findDefaultAccount(client)
-
-
-
+        accountDao.findDefaultAccount(client)!!
 }
