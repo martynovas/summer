@@ -8,7 +8,7 @@ import com.example.model.Money
 import com.example.service.BankService
 
 @Component
-class BankServiceImpl constructor(
+open class BankServiceImpl constructor(
 ) : BankService {
     @Profile
     override fun transferMoney(fromAccount: Account, toAccount: Account, amount: Money) {
